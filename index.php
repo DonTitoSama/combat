@@ -10,26 +10,14 @@
 </head>
 
 <body>
+    <?php
+    require('connexion.php');
+    ?>
     <header class="container">
     <h1>Mini jeu de combats</h1>
         <nav class="nav">
         <?php
-            try
-            {
-            $db = new PDO("mysql:host=localhost:3306;dbname=combats;charset=utf8", "root", "");
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-            }
-            catch( Execption $e )
-            {
-                die( "Erreur : " . $e->getMessage());
-            }
-            $sql = "SELECT * FROM menu"; 
-            $response = $db->query( $sql );
-            $listMenu = $response->fetchAll();
-
-            foreach( $listMenu as $cle=>$menu ) {
-                echo '<a class="nav-link " href="#">' . $menu['ID'] . ' - ' . $menu['nom'] . '</a>';
-            }
+        require ('menu.php');
         ?>
          </nav>
     </header>

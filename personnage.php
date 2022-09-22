@@ -11,13 +11,12 @@
 
 <body>
     <header class="container">
-        <h1>Mini jeu de combats</h1>
+    <h1>Mini jeu de combats</h1>
         <nav class="nav">
-                <a class="nav-link active" href="#">Accueil</a>
-                <a class="nav-link" href="#">Jouer</a>
-                <a class="nav-link" href="#">Liste de personnage</a>
-                <a class="nav-link disabled" href="#">Se déconnecter</a>
-              </nav>
+        <?php
+        require ( 'menu.php' );
+        ?>
+         </nav>
     </header>
 
     <main class="container">
