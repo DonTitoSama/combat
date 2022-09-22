@@ -1,9 +1,15 @@
 <?php
+        $basePath = $_SERVER['HTTP_REFERER'];
+
         $sql = "SELECT * FROM menu"; 
         $response = $db->query( $sql );
         $listMenu = $response->fetchAll();
 
         foreach( $listMenu as $cle=>$menu ) {
-            echo '<a class="nav-link " href="#">' . $menu['ID'] . ' - ' . $menu['nom'] . '</a>';
+            $monScript = '#';
+            if (!empty($menu['script'])) {
+                $monScript = $basePath . $menu['script'];
+            }
+            echo '<a class="nav-link " href="' .$monScript . '">' . $menu['ID'] . ' - ' . $menu['nom'] . '</a>';
         }
 ?>
