@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Mini jeu de combats</title>
+    <title>Se déconnecter</title>
 </head>
 
 <body>
@@ -15,6 +15,7 @@
     ?>
     <header class="container">
     <h1>Mini jeu de combats</h1>
+    <h6>Se déconnecter</h6>
         <nav class="nav">
             <?php
             require ('menu.php');
@@ -23,17 +24,10 @@
     </header>
 
     <main class="container">
-        <div class="row">
-            <div class="col-12 mt-5">
-                <?php
-                $sql = "SELECT COUNT(*) FROM personnages"; 
-                $response = $db->query( $sql );
-                $nbPerso = $response->fetch();
-
-                echo ("<p> Nombre de personnages crées : " . $nbPerso[0] . "</p>");
-                ?>
-            </div>
+     <div class="row">
+        <div class="col-12 mt-5">
         </div>
+    </div>
     </main>
 
     <footer class="container">
